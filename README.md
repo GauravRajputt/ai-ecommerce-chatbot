@@ -210,8 +210,6 @@ Can I cancel my order?
 B.Tech – Artificial Intelligence & Data Science  
 Thakur College of Engineering & Technology, Mumbai
 
-**GitHub:**  
-https://github.com/GauravRajputt
 
 ---
 
