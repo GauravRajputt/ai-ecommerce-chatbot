@@ -1,14 +1,14 @@
 # 🛍️ AI-Powered E-Commerce Chatbot
 
-An AI-powered e-commerce chatbot that allows users to search for products using natural language instead of manually applying multiple filters.
+An AI-powered e-commerce chatbot that allows users to search for products and ask store-related questions using natural language.
 
 For example:
 
 ```text
-Show me Nike shoes under 3000 with rating above 4
+Find highly rated Nike shoes under ₹3,000
 ```
 
-The application understands the query, generates a SQL query using Gemini, searches the SQLite product database, and displays relevant products with details, images, ratings, prices, and direct product links.
+The chatbot understands the user's request, generates SQL using Gemini for product searches, retrieves matching products from a SQLite database, and provides answers to common store-related questions such as refunds, payments, and order cancellation.
 
 ---
 
@@ -17,8 +17,12 @@ The application understands the query, generates a SQL query using Gemini, searc
 - 🔎 Natural language product search
 - 🤖 Gemini-powered SQL generation
 - 🗄️ SQLite product database
-- 🖼️ Product image support
+- 🖼️ Product images
 - 🔗 Direct product links
+- ⭐ Price, discount and rating filters
+- 💳 Payment-related queries
+- 🔄 Refund and return policy queries
+- ❌ Order cancellation queries
 - 🛡️ SQL validation
 - 🔄 AI fallback mechanism
 - 🎨 Interactive Streamlit interface
@@ -41,30 +45,40 @@ SQL Generation & Validation
 SQLite Database
     ↓
 Product Results
+```
+
+For store-related questions:
+
+```text
+User Question
     ↓
-Images + Price + Rating + Product Link
+Query Processing
+    ↓
+Store Information
+    ↓
+AI Response
 ```
 
 ---
 
 ## 🧠 How It Works
 
+### Product Search
+
 1. User enters a natural-language product query.
-2. The application identifies the required filters.
-3. Gemini converts the request into SQL.
-4. The generated SQL is validated.
+2. Gemini understands the required filters.
+3. Gemini generates an SQL query.
+4. The SQL query is validated.
 5. The query is executed on the SQLite database.
-6. Matching products are retrieved.
-7. Products are displayed through the Streamlit interface.
+6. Matching products are displayed with price, rating, discount, images and product links.
 
 Example:
 
 ```text
-User:
-Show me Nike shoes under 3000 with rating above 4
+Find Nike running shoes under ₹3,000 with a rating above 4
 ```
 
-The system generates a query similar to:
+Example SQL:
 
 ```sql
 SELECT *
@@ -73,6 +87,22 @@ WHERE LOWER(brand) LIKE LOWER('%nike%')
 AND LOWER(title) LIKE LOWER('%shoe%')
 AND price < 3000
 AND avg_rating > 4;
+```
+
+### Store Support
+
+The chatbot can also answer questions such as:
+
+```text
+What is your refund policy?
+```
+
+```text
+Do you accept UPI payments?
+```
+
+```text
+Can I cancel my order?
 ```
 
 ---
@@ -113,7 +143,6 @@ E-com-tool/
 
 ---
 
-
 ## ▶️ Run the Application
 
 ```bash
@@ -124,31 +153,53 @@ streamlit run App/main.py
 
 ## 💬 Example Queries
 
+### 🔎 Product Search
+
 ```text
-Show me Nike shoes under 3000
+Find Nike running shoes under ₹3,000 with a rating above 4
 ```
 
 ```text
-Find products with rating above 4
+Show me Adidas products below ₹5,000
+```
+
+### 💳 Payment
+
+```text
+Do you accept UPI payments?
+```
+
+### 🔄 Refund
+
+```text
+What is your refund policy?
 ```
 
 ```text
-Show me Adidas products below 5000
+How long does it take to get a refund?
 ```
 
+### ❌ Cancellation
+
 ```text
-Find Nike products below 3000 with rating above 4
+Can I cancel my order?
 ```
 
 ---
 
-## 🎥 Demo
+## 📸 Screenshots
 
-Add your project demo video here after uploading it to GitHub.
+### Product Search
 
-```text
-https://github.com/user-attachments/assets/your-video-id
-```
+![AI E-Commerce Product Search](screenshots/product-search.png)
+
+### Refund & Payment
+
+![Refund and Payment Support](screenshots/refund-payment.png)
+
+### Order Cancellation
+
+![Order Cancellation Support](screenshots/order-cancellation.png)
 
 ---
 
@@ -168,13 +219,13 @@ https://github.com/GauravRajputt
 
 ```text
 🤖 Generative AI
-🔎 Natural Language Search
+🔎 Natural Language Product Search
 🧠 AI-Based SQL Generation
 🗄️ SQLite Database
+💳 Payment Support
+🔄 Refund & Return Support
+❌ Order Cancellation
 🖼️ Product Images
-🔗 Product Links
 🎨 Streamlit
 🐍 Python
-```
-
 ```
