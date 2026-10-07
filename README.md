@@ -191,15 +191,15 @@ Can I cancel my order?
 
 ### Product Search
 
-![AI E-Commerce Product Search](screenshots/product-search.png)
+![AI E-Commerce Product Search](E-Com-ss/product-search.png)
 
 ### Refund & Payment
 
-![Refund and Payment Support](screenshots/refund-payment.png)
+![Refund and Payment Support](E-Com-ss/refund-payment.png)
 
 ### Order Cancellation
 
-![Order Cancellation Support](screenshots/order-cancellation.png)
+![Order Cancellation Support](E-Com-ss/order-cancellation.png)
 
 ---
 
