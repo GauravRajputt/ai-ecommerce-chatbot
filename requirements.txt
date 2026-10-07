@@ -1,0 +1,9 @@
+streamlit
+pandas
+python-dotenv
+google-genai
+requests
+beautifulsoup4
+semantic-router
+chromadb
+sentence-transformers
